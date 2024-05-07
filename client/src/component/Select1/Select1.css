@@ -1,0 +1,86 @@
+.my-app{
+    padding: 120px 0 0;
+    text-align: center;
+    margin: 50px ;
+
+}
+/* ********search--space**************** */
+.search{
+    margin-top: 30px; 
+    display: flex;
+    flex-direction:column;
+    min-height: 12em;
+    /* border: 2px solid black; */
+    align-items: center;
+    /* justify-content: center; */
+}
+
+/* input section  input have 2-class for better on effects; */
+.search .inp-none{
+    width: 15rem;
+    border-radius:  20px ;
+    /* border: blue; */
+    border: 2px solid rgb(6, 165, 197);
+    padding: 3px 8px;
+    outline: none;
+}
+.search .inp-vis{
+    outline: none;
+    width: 15rem;
+    border-radius: 0;
+    border: 2px solid rgb(6, 165, 197);
+    box-shadow: 3px 2px 4px 1px rgb(81, 102, 100);
+    border-bottom: 0px solid black;
+}
+/* when starting app*- recommend hidden */
+
+.searchRecommend{
+    display: none; 
+    
+}
+/* when click on search{input}- recommend visisble */
+.searchRecommend-vis{
+    margin-bottom: 5rem;
+    max-height: 8rem;
+    width: 15rem;
+    border: 2px  solid rgb(6, 165, 197);
+    border-top: 0px solid black;
+    overflow: hidden;
+    box-shadow: 3px 2px 4px 1px rgb(81, 102, 100);
+    border-radius: 0px 0px 10px 10px;
+}
+
+
+.searchRecommend .names{
+    
+    color: blue;
+    
+    padding: 3px 8px;
+}
+.searchRecommend-vis .names:hover{
+    background-color: #41567e;
+    box-shadow: 1px 1px black;
+}
+
+/* ************discripsion section */
+/* .Mediciens{ */
+    /* display: flex; */
+    /* border: 2px solid black; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    
+/* } */
+.Mediciens .information{
+    /* border: 2px solid black; */
+    text-align: center;
+    
+}
+.Mediciens .drugs{
+    /* border: 2px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+
+}
+
