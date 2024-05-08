@@ -1,30 +1,61 @@
-.my-app{
+.my-app {
     padding: 120px 0 0;
     text-align: center;
-    margin: 50px ;
-
+    margin: 50px auto;
+    position: relative;
 }
-/* ********search--space**************** */
-.search{
-    margin-top: 30px; 
+
+.search {
+    margin-top: 30px;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     min-height: 12em;
-    /* border: 2px solid black; */
     align-items: center;
-    /* justify-content: center; */
 }
 
-/* input section  input have 2-class for better on effects; */
-.search .inp-none{
+.searchRecommend,
+.searchRecommend-vis {
+    margin-bottom: 5rem;
+    max-height: 8rem;
     width: 15rem;
-    border-radius:  20px ;
-    /* border: blue; */
+    border: 2px solid rgb(6, 165, 197);
+    border-top: 0px solid black;
+    overflow: hidden;
+    box-shadow: 3px 2px 4px 1px rgb(81, 102, 100);
+    border-radius: 0px 0px 10px 10px;
+}
+
+.searchRecommend .names,
+.searchRecommend-vis .names {
+    color: blue;
+    padding: 3px 8px;
+}
+
+.searchRecommend-vis .names:hover {
+    background-color: #41567e;
+    box-shadow: 1px 1px black;
+}
+
+.Mediciens .information {
+    text-align: center;
+}
+
+.Mediciens .drugs {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+}
+
+.inp-none {
+    width: 15rem;
+    border-radius: 20px;
     border: 2px solid rgb(6, 165, 197);
     padding: 3px 8px;
     outline: none;
 }
-.search .inp-vis{
+
+.inp-vis {
     outline: none;
     width: 15rem;
     border-radius: 0;
@@ -32,55 +63,24 @@
     box-shadow: 3px 2px 4px 1px rgb(81, 102, 100);
     border-bottom: 0px solid black;
 }
-/* when starting app*- recommend hidden */
 
-.searchRecommend{
-    display: none; 
-    
-}
-/* when click on search{input}- recommend visisble */
-.searchRecommend-vis{
-    margin-bottom: 5rem;
-    max-height: 8rem;
-    width: 15rem;
-    border: 2px  solid rgb(6, 165, 197);
-    border-top: 0px solid black;
-    overflow: hidden;
-    box-shadow: 3px 2px 4px 1px rgb(81, 102, 100);
-    border-radius: 0px 0px 10px 10px;
+button {
+    cursor: pointer;
 }
 
-
-.searchRecommend .names{
-    
-    color: blue;
-    
-    padding: 3px 8px;
-}
-.searchRecommend-vis .names:hover{
-    background-color: #41567e;
-    box-shadow: 1px 1px black;
+/* Dark mode styles */
+.dark .inp-none,
+.dark .inp-vis {
+    border-color: rgba(209, 213, 219);
+    background-color: rgba(55, 65, 81);
+    color: rgba(229, 231, 235);
 }
 
-/* ************discripsion section */
-/* .Mediciens{ */
-    /* display: flex; */
-    /* border: 2px solid black; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    
-/* } */
-.Mediciens .information{
-    /* border: 2px solid black; */
-    text-align: center;
-    
-}
-.Mediciens .drugs{
-    /* border: 2px solid black; */
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    justify-content: center;
-
+.dark button {
+    background-color: rgba(96, 165, 250);
+    color: rgba(31, 41, 55);
 }
 
+.dark button:hover {
+    background-color: rgba(96, 165, 250, 0.8);
+}
