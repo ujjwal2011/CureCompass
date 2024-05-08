@@ -6,7 +6,7 @@ const LandingPage = () => {
     <div className="bg-center min-h-screen flex flex-col md:flex-row items-center justify-end" style={{ backgroundImage: `url('/assets/images/Front.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
       <div className="max-w-4xl px-8 py-16 text-center text-black md:pl-20">
         <div className="mb-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Welcome to HealthCare</h1>
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Welcome to CureCompass</h1>
         <p className="text-lg md:text-xl text-white mb-8">Your journey to fitness starts here.</p>
 
           <div className="flex justify-center mb-8">

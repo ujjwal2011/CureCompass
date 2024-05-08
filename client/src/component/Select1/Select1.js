@@ -7,6 +7,7 @@ import './Select1.css'
 export default function Select1() {
   const [drug, setDrug] = useState("");
   const [RecommendMedi, setRecommendMedi] = useState("");
+  const [holder, setHolder] = useState("");
   //  when input change drug change ,after selecting one condition drug 
   // should not change {for displaying Section }so i use shown drug which only changes on submit
   const [shownDrug, setshownDrug] = useState("")   
@@ -16,6 +17,7 @@ export default function Select1() {
   const submit=(drug)=>{ 
     setDrug(drug); //seting drug
      setshownDrug(drug);    //setting shown drug
+     setHolder(drug)
     // const a="https://prognodserver.hop.sh/predict/";  // api**?
     //  console.log(a+drug);
     const a="http://localhost:5000/predict/"  // local server not for deployment;
@@ -57,37 +59,27 @@ export default function Select1() {
   return (
     <>
     <Navbar /> 
-    <div className="my-app" >
+    <div className="my-app" style={{ backgroundImage: `url('/assets/images/s1.avif')`,backgroundSize: '100%' }}>
      <h2 className="text-2xl font-weight-bold text-center mb-3 text-primary">Start Navigating with CureCompass</h2>
-    </div>
-      {/* <div className="search">
-        
-        <label htmlFor="DrugName"> Enter your Condition:</label> */}
+     <div className="">
         
         <form className="max-w-md mx-auto ">   
         <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
        
         <div className="relative">
-        {/* <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-             <svg className="pl-8 w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg> 
-           
-          </div> */}
-          <input type="search" id="default-search" className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  value={`${drug}`}  onChange={(e)=>{
+       
+          <input type="search" id="default-search" className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  value={drug}  onChange={(e)=>{
           setDrug(e.target.value);
+          setHolder(e.target.value);
           
-          }} placeholder="Ex:Depression" required />
-          <button type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+          }} placeholder={ holder ? holder : 'Ex:Depression' } required />
+
+          <button type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Search</button>
 
         </div>
       </form>
 
-        {/* <input className={inp}  placeholder="ex : Depression" />
         
-           */}
-          {/* ***displaying the result with same name below search-bar */}
-        {/* passing dynamic class rec_vis to change visibility */}
         <div className={`max-w-md mx-auto ${rec_vis}`}>
         {drug && conditions.filter((ele) => ele.toLowerCase().startsWith(drug.toLowerCase())).map((ele) => (
     <div className="relative w-full" key={`name${count++}`} onClick={() => submit(ele)}>
@@ -96,16 +88,11 @@ export default function Select1() {
         </div>
     </div>
 ))}
-
-
-
+        </div>    
 </div>
+     <div className="container mt-3 Mediciens">
+      <h2 className="text-2xl font-weight-bold text-center mb-3 text-primary">Medicine Recommendation</h2>
 
-
-
-      
-{/* **********displaying recommended drugs**--- */}
-      <div className="Mediciens">
         {
           RecommendMedi===""? (<> <p className="text-xl font-weight-bold text-center mb-4 text-secondary">Your selected condition: None</p></>):
           (<><div className="information">
@@ -125,6 +112,14 @@ export default function Select1() {
 
         }
       </div>
+    </div>
+      
+
+
+
+      
+{/* **********displaying recommended drugs**--- */}
+      
     </>
   );
 }
