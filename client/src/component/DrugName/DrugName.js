@@ -6,7 +6,7 @@ import './DrugName.css'
 // section for card of each drug and their info
 export default function DrugName(props) {
   // need to create seprate variable because in useeffect usestate was not working {storing res data}
-  const [aman, setaman] = useState(null);
+  const [Form, setForm] = useState(null);
   const [strenght, setstrenght] = useState(null);
   const [rout, setrout] = useState(null);
   const [produt, setprodut] = useState(null);
@@ -27,7 +27,7 @@ export default function DrugName(props) {
 	.then(response => response.json())
 	.then((response )=>{
     // console.log(response);
-    setaman(response[0].dosage_form);
+    setForm(response[0].dosage_form);
     setstrenght(response[0].active_ingredients[0].strength);
     setbrand(response[0].brand_name)
     setprodut(response[0].product_type  )
@@ -61,7 +61,7 @@ export default function DrugName(props) {
                 <div className="name">{props.Name}</div>
                 <div className="about">
                     <div className="info"><span>STRENGTH:</span>{strenght} </div>
-                    <div className="info"><span>DOSAGE_FORM:</span>{aman}</div>
+                    <div className="info"><span>DOSAGE_FORM:</span>{Form}</div>
                     <div className="info"><span>ROUTE:</span>{rout}</div>
                     <div className="info"><span>PRODUCT_TYPE:</span>{produt} </div>
                     <div className="info"><span>BRAND_NAME:</span>{brand} </div>

@@ -19,9 +19,9 @@ const About = () => {
         to deliver tailored recommendations that prioritize user safety and well-being.
       </p>
       <p className="text-lg text-gray-700 mb-6">
-        One of the novel aspects of our app is its use of advanced machine learning algorithms to analyze vast amounts of medical data
+        One of the novel aspects of our app is its use of user reviews to these medicines to analyze vast amounts of medical data
         and generate personalized medication suggestions. This innovative approach allows us to provide recommendations that are
-        not only accurate but also adaptable to each user's unique health profile.
+        not only accurate but also adaptable to each user's health profile.
       </p>
       {/* <h2 className="text-2xl font-semibold mb-4 text-center">Meet Our Developers</h2>
       <div className="flex items-center space-x-4">
