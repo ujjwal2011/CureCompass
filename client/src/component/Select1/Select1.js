@@ -53,16 +53,12 @@ export default function Select1() {
     console.log(drug);
   }, [drug]);
 
-  console.log("drug");
-  console.log(drug);
   
-  console.log("conditions");
-  console.log(conditions);
   return (
     <>
-    <Navbar />
-    <div className="my-app">
-      Your one stop for getting better Drug recommendation
+    <Navbar /> 
+    <div className="my-app" >
+     <h2 className="text-2xl font-weight-bold text-center mb-3 text-primary">Start Navigating with CureCompass</h2>
     </div>
       {/* <div className="search">
         
@@ -111,16 +107,19 @@ export default function Select1() {
 {/* **********displaying recommended drugs**--- */}
       <div className="Mediciens">
         {
-          RecommendMedi===""? (<> <h3 style={{"textAlign":"center"}}>Your selected condition: None</h3></>):
+          RecommendMedi===""? (<> <p className="text-xl font-weight-bold text-center mb-4 text-secondary">Your selected condition: None</p></>):
           (<><div className="information">
 
-              <h2>Your selected condition: {shownDrug} </h2>
+              <p className="text-xl font-weight-bold text-center mb-4 text-secondary">Diseases Chosen: {shownDrug}</p>
 
-              <p>Here are some Drugs that may be useful based on user reviews and ranked.</p>
-            </div><div className="drugs">
+
+              {/* <p>Here are some Drugs that may be useful based on user reviews and ranked.</p> */}
+            </div>
+            <div className="list-group-item bg-light" style={{display:"flex", justifyContent:"center", alignContent:'center',height:'max-content',weight:'max-content'}}>
 
                 {RecommendMedi.map((ele) => { return <DrugName key={ele} Name={ele}></DrugName>; })}
               </div></>
+
                
             )
 

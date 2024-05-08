@@ -48,30 +48,39 @@ export default function DrugName(props) {
     // card html-----------
     <>
     
-    <div className="card">
+    <div className="card" style={{ backgroundImage: `url('/assets/images/s2.jpg')`, backgroundSize: '100%'  }}>
             <div className="card-front">
-              <div className="N">
-
+            <div className="mb-3 text-violet-900 N">
                {props.Name}
               </div>
                 
             </div>
             <div className="card-back">
                 
-                <div className="name">{props.Name}</div>
-                <div className="about">
-                    <div className="info"><span>STRENGTH:</span>{strenght} </div>
-                    <div className="info"><span>DOSAGE_FORM:</span>{Form}</div>
-                    <div className="info"><span>ROUTE:</span>{rout}</div>
-                    <div className="info"><span>PRODUCT_TYPE:</span>{produt} </div>
-                    <div className="info"><span>BRAND_NAME:</span>{brand} </div>
+                <div className="mb-3 text-violet-900 name">{props.Name}</div>
+                <ul className="list-group about">
+                <li className="alert alert-info text-center">
+                STRENGTH:   {strenght} 
+                </li>
+                <li className="alert alert-info text-center">
+                DOSAGE_FORM:  {Form} 
+                </li>
+                <li className="alert alert-info text-center">
+                ROUTE:   {rout} 
+                </li>
+                <li className="alert alert-info text-center">
+                PRODUCT_TYPE:   {produt} 
+                </li>
+                <li className="alert alert-info text-center">
+                BRAND_NAME:  {brand} 
+                </li>
                     
-                </div>
+                </ul>
                 
             </div>
         </div>
    
-    
-    </>
-  )
+    
+    </>
+  )
 }

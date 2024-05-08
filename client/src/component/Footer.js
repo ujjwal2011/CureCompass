@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-dark text-light py-3" style={{"width":"100%","marginTop":"150px"}}>
      <p className="text-center">
-      Made by Ujjwal&copy;Drugs.com 
+      Made by Ujjwal&copy;CureCompass.com 
 
      </p>
     </footer>
